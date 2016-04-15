@@ -26,7 +26,7 @@ class Shopware_Plugins_Frontend_SwagNewRelic_Bootstrap extends Shopware_Componen
         }
 
         if (extension_loaded('newrelic')) {
-            newrelic_name_transaction($request->getControllerName() . '/' . $request->getActionName());
+            newrelic_name_transaction($request->getModuleName() . '/' . $request->getControllerName() . '/' . $request->getActionName());
 
             $action->View()->addTemplateDir(__DIR__ . '/Views/');
         }
